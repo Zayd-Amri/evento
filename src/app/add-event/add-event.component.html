@@ -1,0 +1,44 @@
+<div class="jumbotron">
+    <h1>Ajouter un evenement</h1>
+    </div>
+    <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>Succés!</strong> evenement ajouté avec succés
+      
+    </div>
+<form [formGroup]="ajoutEvent" (ngSubmit)="createEvent()">
+    <div class="form-group">
+      <label  class="form-label">Nom d'evenement</label>
+      <input type="text" class="form-control" placeholder="Nom d'evenement" id="nom" formControlName="nom" required>
+      <span class="error" *ngIf="ajoutEvent.get('nom').invalid && ajoutEvent.get('nom').touched">Entrez le nom d'évenement!!</span>
+
+    </div>
+    
+    <div class="form-group">
+      <label  class="form-label">Organisateur</label>
+      <input type="text" class="form-control" placeholder="Organisateur" formControlName="organisePar">
+      <span class="error" *ngIf="ajoutEvent.get('organisePar').invalid && ajoutEvent.get('organisePar').touched">Entrez le nom de l'organisateur!!</span>
+
+    </div>
+    <div class="form-group">
+      <label  class="form-label">Telephone</label>
+      <input type="number" class="form-control" placeholder="Telephone" formControlName="telephone">
+     
+    </div>
+    <div class="form-group">
+      <label  class="form-label">Adresse</label>
+      <input type="text" class="form-control" placeholder="Adresse" formControlName="adresse">
+     
+    </div>
+    <div class="form-group">
+      <label  class="form-label">Description</label>
+      <input type="textarea" class="form-control" placeholder="Description" formControlName="description">
+     
+    </div>
+    <div class="form-group">
+      <label  class="form-label">Description</label>
+      <input type="file" class="form-control" formControlName="image">
+     
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>

@@ -1,0 +1,18 @@
+<div class="jumbotron">
+    <h1>Login</h1>
+    </div>
+<form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <div class="form-group">
+      <label  class="form-label">email</label>
+      <input type="email" class="form-control" placeholder="abc@abc"  formControlName="email" required>
+      <span class="error" *ngIf="loginForm.get('email').invalid && loginForm.get('email').touched">Entrez votre email!!</span>
+
+    </div>
+    
+    <div class="form-group">
+      <label  class="form-label">mot de passe</label>
+      <input type="password" class="form-control" placeholder="*****" formControlName="pwd">
+      <span class="error" *ngIf="loginForm.get('pwd').invalid && loginForm.get('pwd').touched">Entrez votre mot de passe!!</span>
+
+    </div>
+    </form>

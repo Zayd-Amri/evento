@@ -1,0 +1,36 @@
+<div class="jumbotron">
+    <h1>Modifier un evenement</h1>
+    </div>
+    <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>Succés!</strong> evenement modifié avec succés
+      
+    </div>
+<form [formGroup]="modifierEvent" (ngSubmit)="updateEvent()">
+    <div class="form-group">
+      <label  class="form-label">Nom d'evenement</label>
+      <input type="text" class="form-control" placeholder="Nom d'evenement" formControlName="nom">
+     
+    </div>
+    <div class="form-group">
+      <label  class="form-label">Organisateur</label>
+      <input type="text" class="form-control" placeholder="Organisateur" formControlName="organisePar">
+     
+    </div>
+    <div class="form-group">
+      <label  class="form-label">Telephone</label>
+      <input type="number" class="form-control" placeholder="Telephone" formControlName="telephone">
+     
+    </div>
+    <div class="form-group">
+      <label  class="form-label">Adresse</label>
+      <input type="text" class="form-control" placeholder="Adresse" formControlName="adresse">
+     
+    </div>
+    <div class="form-group">
+      <label  class="form-label">Description</label>
+      <input type="textarea" class="form-control" placeholder="Description" formControlName="description">
+     
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Modifier</button>
+  </form>
